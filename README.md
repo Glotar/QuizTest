@@ -25,3 +25,4 @@ Errors found so far:
 - application could return Infinity as an area value
 - application could return Infinity as an perimeter value
 - sending ~10 000 separated values crashes application (OOM)
+- typo in exception class name "com.natera.test.triangle.exception.NotFounException"
