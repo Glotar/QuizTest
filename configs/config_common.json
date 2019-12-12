@@ -1,0 +1,19 @@
+{
+  "vars": {
+    "default": {
+      "envName": "default",
+      "envUrl": "https://qa-quiz.natera.com/1",
+      "userToken": "bd4b322d-9c3a-47c4-9fe8-a9713a9f7ca1_"
+    },
+    "localhost": {
+      "envName": "localhost",
+      "envUrl": "http://localhost:8080/",
+      "userToken": "testUser"
+    },
+    "qa-quiz": {
+      "envName": "qa-quiz",
+      "envUrl": "https://qa-quiz.natera.com/",
+      "userToken": "eeee56b8-fdab-42de-b88c-58641dfef9ec"
+    }
+  }
+}

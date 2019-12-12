@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false">
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%24.24c{1}] - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="CurrentLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="TRACE"/>
+        <param name="Encoding" value="UTF-8"/>
+        <param name="File" value="logs/current.log"/>
+        <param name="Append" value="false"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="20"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p] [%-15t] - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="CurrentTestLog" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="Encoding" value="UTF-8"/>
+        <param name="File" value="logs/current_test.log"/>
+        <param name="Append" value="false"/>
+        <param name="MaxFileSize" value="10MB"/>
+        <param name="MaxBackupIndex" value="0"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p] - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="TaskOutputLogger" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="Encoding" value="UTF-8"/>
+        <param name="File" value="logs/task.log"/>
+        <param name="MaxFileSize" value="100MB"/>
+        <param name="MaxBackupIndex" value="3"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} %m%n"/>
+        </layout>
+    </appender>
+
+    <category name="org.apache">
+        <priority value="ERROR"/>
+    </category>
+
+    <category name="TaskOutputLogger" additivity="false">
+        <priority value="INFO"/>
+        <appender-ref ref="TaskOutputLogger"/>
+    </category>
+
+    <root>
+        <priority value="TRACE"/>
+        <appender-ref ref="ConsoleAppender"/>
+        <appender-ref ref="CurrentLog"/>
+        <appender-ref ref="CurrentTestLog"/>
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,17 @@
+<suite name="FullTestRun">
+    <test name="AutoQA">
+        <classes>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+            <class name="com.quiz.qa.SmokeTest"/>
+        </classes>
+    </test>
+</suite>
