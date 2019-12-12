@@ -10,6 +10,8 @@
             <class name="com.quiz.qa.SideValuesCornerCasesTest"/>
             <class name="com.quiz.qa.DegenerateTriangleCreationFailTest"/>
             <class name="com.quiz.qa.TextNotAllowedInSideValuesTest"/>
+            <class name="com.quiz.qa.SeparatorSpecialSymbolsTest"/>
+            <class name="com.quiz.qa.SeparatorAlphabetTest"/>
         </classes>
     </test>
 </suite>
