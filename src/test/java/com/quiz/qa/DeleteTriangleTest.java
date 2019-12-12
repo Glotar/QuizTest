@@ -6,7 +6,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.entity.ContentType;
 import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 

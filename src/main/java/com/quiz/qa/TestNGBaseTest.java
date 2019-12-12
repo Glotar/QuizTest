@@ -93,23 +93,27 @@ public abstract class TestNGBaseTest extends BaseTest {
     }
 
     @BeforeTest
-    protected void initEnvironment() {
+    protected void initEnvironment() throws IOException {
         logger.info("InitEnvironment...");
 
         String newConfigSection = java.util.Optional.ofNullable(System.getenv(CONFIG_SECTION)).orElse("default");
         logger.info("Using '" + newConfigSection + "' config section from environment variable");
         Config.setConfigSection(newConfigSection);
-    }
-
-    @BeforeClass
-    public static void beforeTests() throws IOException {
-        RestHelpers.disableAuthenticationOverride();
         deleteAllTriangles();
     }
 
-    @AfterClass
-    public static void afterTests() throws IOException {
+    @BeforeMethod
+    public static void beforeMethod() {
         RestHelpers.disableAuthenticationOverride();
+    }
+
+    @AfterMethod
+    public static void afterMethod() {
+        RestHelpers.disableAuthenticationOverride();
+    }
+
+    @AfterClass
+    public static void afterClass() throws IOException {
         deleteAllTriangles();
     }
 

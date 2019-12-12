@@ -1,11 +1,13 @@
 package com.quiz.qa;
 
 import com.quiz.qa.responseObjectModels.TriangleObject;
+import org.checkerframework.checker.units.qual.A;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class SeparatorSpecialSymbolsTest<T> extends TestNGBaseTest {
 
     @DataProvider(name = "testData")
     public static Object[] dataForTest() {
-        String separatorCollectionString = "\',\",\\,\t,\b,\r,\f,\n";
+        String separatorCollectionString = "\',\",\\,\t,\b,\r,\f,\n, ,:,(,),[,],%,<,>,/,_,+,-,*,~,!,@,#,$,^,&,№,`,?";
         List<String> separatorCollection = Arrays.asList(separatorCollectionString.split(","));
         return separatorCollection.toArray();
     }

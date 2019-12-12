@@ -5,9 +5,7 @@ import com.quiz.qa.responseObjectModels.TriangleObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.entity.ContentType;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,17 +21,13 @@ public class AccessTest extends TestNGBaseTest {
 
     public static List<TriangleObject> initialTriangles = new ArrayList<>();
 
-    @Before
+    @BeforeClass
     public void beforeTest() throws IOException {
         initialTriangles= new ArrayList<>();
         initialTriangles.add(postTriangle(1, 1, 1));
         initialTriangles.add(postTriangle(10, 10, 10));
         initialTriangles.add(postTriangle(3, 4, 5));
-    }
-
-    @After
-    public void afterTest() {
-        RestHelpers.disableAuthenticationOverride();
+        logger.info("initialTriangles("+initialTriangles.size()+"):\n" + getAllTriangles());
     }
 
     @Test

@@ -1,24 +1,21 @@
 package com.quiz.qa;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
-@RunWith(Parameterized.class)
 public class DegenerateTriangleCreationFailTest<T> extends TestNGBaseTest {
-    private TrianglePostPayload payload;
 
-    public DegenerateTriangleCreationFailTest(TrianglePostPayload payload) {
-        this.payload = payload;
+    @AfterMethod
+    public void clean() throws IOException {
+        deleteAllTriangles();
     }
 
-    @Parameterized.Parameters(name = "{index}: Trying to post triangle: {0} ")
-    public static List<TrianglePostPayload> dataForTest() {
-        return Arrays.asList(
+    @DataProvider(name="testData")
+    public static Object[] dataForTest() {
+        return new Object[]{
                 new TrianglePostPayload(1, 2, 3),
                 new TrianglePostPayload(1, 2, 3),
                 new TrianglePostPayload(1.1, 2.2, 3.3),
@@ -33,11 +30,11 @@ public class DegenerateTriangleCreationFailTest<T> extends TestNGBaseTest {
                 new TrianglePostPayload(0.0, 7, 7),
                 new TrianglePostPayload(7, 7, -0.0),
                 new TrianglePostPayload(7, -0.0, 7),
-                new TrianglePostPayload(-0.0, 7, 7));
+                new TrianglePostPayload(-0.0, 7, 7)};
     }
 
-    @Test
-    public void degenerateTriangleCreationFailTest() throws IOException {
+    @Test(dataProvider = "testData")
+    public void degenerateTriangleCreationFailTest(TrianglePostPayload payload) throws IOException {
         checkCannotProcessInputError(
                 payload.requestBody);
     }

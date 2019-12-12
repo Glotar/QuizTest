@@ -1,0 +1,15 @@
+<suite name="FullTestRun">
+    <test name="AutoQA" preserve-order="true">
+        <classes>
+            <class name="com.quiz.qa.AccessTest"/>
+            <class name="com.quiz.qa.SimplePostTest"/>
+            <class name="com.quiz.qa.PostTriangleSingleTests"/>
+            <class name="com.quiz.qa.DeleteTriangleTest"/>
+            <class name="com.quiz.qa.NegativeSideValuesTest"/>
+            <class name="com.quiz.qa.ImpossibleTriangleCreationFailTest"/>
+            <class name="com.quiz.qa.SideValuesCornerCasesTest"/>
+            <class name="com.quiz.qa.DegenerateTriangleCreationFailTest"/>
+            <class name="com.quiz.qa.TextNotAllowedInSideValuesTest"/>
+        </classes>
+    </test>
+</suite>

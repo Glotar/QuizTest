@@ -2,8 +2,9 @@ package com.quiz.qa;
 
 import com.quiz.qa.responseObjectModels.ErrorResponseObject;
 import org.apache.http.HttpResponse;
-import org.junit.After;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 
@@ -12,14 +13,19 @@ import static org.junit.Assert.assertEquals;
 
 public class PostTriangleSingleTests extends TestNGBaseTest {
 
-    @After
-    public void afterTest() throws IOException {
+    @AfterMethod
+    public void clean() throws IOException {
         deleteAllTriangles();
     }
 
     @Test
     public void emptySeparatorTest() throws IOException {
         checkCannotProcessInputError(1, 1, 1, "");
+    }
+
+    @Test
+    public void dotSeparatorTest() throws IOException {
+        checkCannotProcessInputError(1, 1, 1, ".");
     }
 
     @Test

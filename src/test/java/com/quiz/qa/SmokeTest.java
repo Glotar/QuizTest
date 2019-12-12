@@ -1,7 +1,7 @@
 package com.quiz.qa;
 
 import com.quiz.qa.responseObjectModels.TriangleObject;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.List;

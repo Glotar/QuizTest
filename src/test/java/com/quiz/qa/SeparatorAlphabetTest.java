@@ -12,12 +12,13 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class SeparatorSpecialSymbolsTest<T> extends TestNGBaseTest {
+public class SeparatorAlphabetTest<T> extends TestNGBaseTest {
 
     @DataProvider(name = "testData")
     public static Object[] dataForTest() {
-        String separatorCollectionString = "\',\",\\,\t,\b,\r,\f,\n";
+        String separatorCollectionString = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
         List<String> separatorCollection = Arrays.asList(separatorCollectionString.split(","));
+
         return separatorCollection.toArray();
     }
 
@@ -27,7 +28,7 @@ public class SeparatorSpecialSymbolsTest<T> extends TestNGBaseTest {
     }
 
     @Test(dataProvider = "testData")
-    public void separatorTest(String separator) throws IOException {
+    public void separatorAlphabetTest(String separator) throws IOException {
         TriangleObject expectedTriangle = checkPostTriangle(
                 7,7,7,
                 separator);
