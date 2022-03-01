@@ -2,7 +2,7 @@
   "vars": {
     "default": {
       "envName": "default",
-      "envUrl": "https://qa-quiz.natera.com/1",
+      "envUrl": "https://qa-quiz.natera.com/7",
       "userToken": "bd4b322d-9c3a-47c4-9fe8-a9713a9f7ca1_"
     },
     "localhost": {

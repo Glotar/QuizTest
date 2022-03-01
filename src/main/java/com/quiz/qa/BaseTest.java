@@ -5,7 +5,8 @@ import com.quiz.qa.responseObjectModels.TriangleObject;
 import com.quiz.qa.responseObjectModels.ValueResponseObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ import static com.quiz.qa.Config.getEnvUrl;
 import static com.quiz.qa.RequestTypes.*;
 
 public abstract class BaseTest {
-    private static final Logger logger = Logger.getLogger(BaseTest.class);
+    private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
     @After
     public void clearAllTriangles() throws IOException {

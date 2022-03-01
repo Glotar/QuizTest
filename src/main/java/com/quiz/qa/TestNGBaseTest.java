@@ -5,7 +5,8 @@ import com.quiz.qa.responseObjectModels.ErrorResponseObject;
 import com.quiz.qa.responseObjectModels.TriangleObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -22,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 
 @Listeners({SuiteListener.class})
 public abstract class TestNGBaseTest extends BaseTest {
-    protected static final Logger logger = Logger.getLogger(TestNGBaseTest.class);
+    protected static final Logger logger = LogManager.getLogger(TestNGBaseTest.class);
     protected Map<String, Object> vars = new HashMap<String, Object>();
     private static String CONFIG = System.getenv("CONFIG") == null || System.getenv("CONFIG").equals("")
             ? null : System.getenv("CONFIG");

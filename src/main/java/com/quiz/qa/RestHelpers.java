@@ -12,7 +12,8 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -24,7 +25,7 @@ import static com.quiz.qa.CommonStrings.AUTH_HEADER_NAME;
 import static com.quiz.qa.Config.getUserToken;
 
 public class RestHelpers {
-    private static final Logger logger = Logger.getLogger(RestHelpers.class);
+    private static final Logger logger = LogManager.getLogger(RestHelpers.class);
 
     public static String OVERRIDE_AUTH_HEADER_NAME = null;
     public static String OVERRIDE_AUTH_TOKEN = null;

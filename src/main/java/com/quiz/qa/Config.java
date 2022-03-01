@@ -2,7 +2,7 @@ package com.quiz.qa;
 
 import com.google.common.io.ByteStreams;
 import com.google.gson.*;
-import org.apache.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
